@@ -1,0 +1,15 @@
+.toggleWrapper{
+    height: 60px;
+    width: 100px;
+    background-color: #444444;
+    padding: 10px;
+    .toggleSlip{
+        height: 40px;
+        width: 40px;
+        background-color: antiquewhite;
+        transition: all 200ms;
+    }
+    .toggleSlip.on{
+        margin-left: 40px;
+    }
+}

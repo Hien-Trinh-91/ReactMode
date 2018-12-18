@@ -1,0 +1,15 @@
+@import '../Variables.scss';
+.main {
+    padding-left: 120px;
+    min-height: 100vh;
+    -webkit-transition: 500ms all ease;
+    /* Safari */
+    transition: width 500ms all ease;
+    .mainContent {
+        background: $mainGreenColorBlur;
+    }
+    &.expand {
+        padding-left: 70px;
+    }
+    color: $mainTextColor;
+}

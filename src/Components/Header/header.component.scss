@@ -1,0 +1,135 @@
+@import '../../_Variables.scss';
+@import '../../_Mixin.scss';
+.header {
+    height: 100px;
+    color: $mainRubyColor;
+    padding-left: 80px;
+    .report,
+    .action {
+        cursor: pointer;
+        .dropdown-item {
+            color: $mainGreenColor;
+            svg {
+                color: $mainRubyColor;
+            }
+        }
+        .dropdown-menu {
+            border: solid 1px $mainGreenColor;
+            top: 80px;
+            &:after {
+                position: absolute;
+                left: 25%;
+                top: -10px;
+                width: 0;
+                height: 0;
+                content: '';
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-bottom: 10px solid $mainGreenColor;
+            }
+            &:before {
+                position: absolute;
+                left: calc(25% + 1px);
+                top: -9px;
+                width: 0;
+                height: 0;
+                z-index: 1;
+                content: '';
+                border-left: 9px solid transparent;
+                border-right: 9px solid transparent;
+                border-bottom: 9px solid #ffffff;
+            }
+        }
+    }
+    .tool {
+        display: flex;
+        align-items: center;
+        padding: 0px 20px;
+        svg {
+            cursor: pointer;
+            color: $mainGreenColor;
+        }
+        .quickAction {
+            display: inline-block;
+            .dropdown-menu {
+                border: solid 1px $mainGreenColor;
+                top: 80px;
+                right: -30px;
+                left: auto;
+                padding-top: 0px;
+                &:after {
+                    position: absolute;
+                    right: 15%;
+                    top: -10px;
+                    width: 0;
+                    height: 0;
+                    content: '';
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-bottom: 10px solid $mainGreenColor;
+                }
+                .quickAction-title {
+                    background-color: $mainGreenColor;
+                    padding: 5px 0px;
+                    font-weight: bolder;
+                    text-align: center;
+                    color: #ffffff;
+                }
+                .quickAction-content {
+                    width: 280px;
+                    height: 280px;
+                    padding: 0px;
+                    border: none;
+                    font-size: 0.75rem;
+                    .action-item {
+                        width: 140px;
+                        height: 140px;
+                        display: inline-block;
+                        position: relative;
+                        text-align: center;
+                        border: 1px solid $mainGreenColor;
+                        a {
+                            text-decoration: none;
+                            color: $mainDarkColor;
+                            font-weight: bolder;
+                        }
+                        .action-item-content {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            @include translate(-50%, -50%);
+                            svg {
+                                height: 35px;
+                                width: 35px;
+                            }
+                        }
+                    }
+                }
+                &.show {
+                    padding-bottom: 0px;
+                    border-radius: 0px;
+                }
+            }
+        }
+    }
+    .userInfo {
+        .user-image {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .dropdown-toggle {
+            cursor: pointer;
+        }
+        .dropdown-menu {
+            right: 0;
+            left: auto !important;
+            min-width: 5rem;
+            a {
+                padding: 5px 20px;
+                text-decoration: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+@import '../../_Variables.scss';
+.left-sidebar {
+    position: fixed;
+    z-index: 9999;
+    width: 120px;
+    height: 100vh;
+    background-color: $mainDarkColor;
+    top: 0px;
+    -webkit-transition: width 500ms;
+    /* Safari */
+    transition: width 500ms;
+    .sidebarContent {
+        overflow: hidden;
+    }
+    ul {
+        list-style: none;
+        padding: 0px;
+        li {
+            text-align: center;
+            padding: 15px;
+            svg {
+                font-size: 24px;
+                color: $mainRubyColor;
+            }
+            a {
+                text-decoration: none;
+                color: white;
+            }
+            div {
+                color: $mainGreenColor;
+            }
+        }
+        .mainLogo {
+            height: 100px;
+            img {
+                height: 80px;
+                object-fit: cover;
+            }
+        }
+    }
+    .toggleIcon {
+        height: 50px;
+        width: 50px;
+        right: -50px;
+        background-color: $mainDarkColor;
+        top: 20px;
+        position: absolute;
+        display: flex;
+        cursor: pointer;
+        svg {
+            color: $mainGreenColor;
+            height: 30px;
+            width: 30px;
+            margin: auto;
+        }
+    }
+    &.closed {
+        width: 70px;
+        ul li div {
+            display: none;
+        }
+        .mainLogo img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
