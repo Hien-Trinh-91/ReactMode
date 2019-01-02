@@ -10,7 +10,7 @@ import UserInfoComponent from './UserInfo/userInfo.component';
 import ChartComponent from './Chart/chart.component';
 import AssetsComponent from './Assets/assets.component';
 import RegisterComponent from './Register';
-
+import DragDropComponent from './DragDrop';
 const history: History = createBrowserHistory();
 class Main extends React.Component<{}, any> {
     componentDidMount() {
@@ -36,6 +36,7 @@ class Main extends React.Component<{}, any> {
                                 <Route path='/charts' component={ChartComponent} />
                                 <Route path='/assets' component={AssetsComponent} />
                                 <Route path='/register' component={RegisterComponent} />
+                                <Route path='/dragDrop' component={DragDropComponent} />
                                 <Redirect from='*' to='/dashboard' />
                             </Switch>
                         </div>

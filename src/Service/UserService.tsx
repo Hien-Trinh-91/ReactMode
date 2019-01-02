@@ -1,6 +1,6 @@
 import { ILogin } from "../Interface/IModel";
 import { IUserService } from "../Interface/IService";
-
+import axios from 'axios';
 export class UserService implements IUserService {
     private static _instance: UserService
     private constructor() {
@@ -10,11 +10,10 @@ export class UserService implements IUserService {
         return this._instance || (this._instance = new this());
     }
     async createUser(userInfo: any) {
-        return fetch('http://localhost:3000/auth/register', {
-            method: 'POST', headers: {
-                "Content-Type": "application/json"
-            }, body: JSON.stringify(userInfo)
-        }).then(value => {
+        return axios.post(
+            'auth/register',
+            userInfo
+        ).then(value => {
             console.log(value);
         }).catch(err => {
             return err
@@ -22,19 +21,24 @@ export class UserService implements IUserService {
     }
 
     async loginUser(userInfo: ILogin) {
-        // localStorage.setItem('username', userInfo.Username)
-        const loginResult: any = await fetch('http://localhost:3000/auth/login', {
-            method: 'POST', headers: {
-                "Content-Type": "application/json"
-            }, body: JSON.stringify(userInfo)
-        });
-        return loginResult.json().then((value: any) => {
-            if (value.token){
+        return axios.post(
+            'auth/login',
+            userInfo
+        ).then((value: any) => {
+            if (value.token) {
                 localStorage.setItem('token', value.token);
                 localStorage.setItem('username', value.username);
             }
             return value;
-        }).catch((err:any)=>{
+        }).catch((err: any) => {
+            throw err;
+        })
+    }
+
+    async findUsers(query: any) {
+        return axios.post('user/findAll', query).then((users: any) => {
+            return users.data
+        }).catch(err => {
             throw err;
         })
     }

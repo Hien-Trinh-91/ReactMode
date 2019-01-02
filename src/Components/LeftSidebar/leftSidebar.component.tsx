@@ -53,10 +53,10 @@ class LeftSidebar extends React.Component {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/leaving">
+                            <Link to="/dragDrop">
                                 <FontAwesomeIcon icon={faRocket} />
                                 <div>
-                                    DSM
+                                    Drag Drop
                                 </div>
                             </Link>
                         </li>

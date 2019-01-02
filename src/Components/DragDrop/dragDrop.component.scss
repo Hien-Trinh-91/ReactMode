@@ -1,0 +1,44 @@
+@import '../../_Variables.scss';
+.dragDrop {
+    padding: 15px;
+}
+
+.dragItem {
+    padding: 5px 10px;
+    display: block;
+    background-color: $mainGreenColorBlur;
+    border: 1px solid $mainGreenColor;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    text-align: center;
+    cursor: move;
+    img {
+        width: 50%;
+    }
+    .info {
+        color: $mainRubyColor;
+        font-weight: 600;
+    }
+}
+
+.player {
+    min-height: 100px;
+    background-color: $mainGreenColor !important;
+    color: $mainTextColor;
+    font-weight: 600;
+    text-align: center;
+}
+
+.charater {
+    display: flex;
+    justify-content: center;
+    padding: 2px 0px;
+    >div {
+        display: inline-flex;
+        border: 1px solid $mainRubyColor;
+        background-color: white;
+        border-radius: 3px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+}
