@@ -9,7 +9,7 @@ import { WithContext as ReactTags } from 'react-tag-input';
 import BehaviorComponent from '../Behavior/behavior.component';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import asyncComponent from '../../Utils/asyncComponent';
-import TeamsComponent from './Teams/teams.component';
+// import TeamsComponent from './Teams/teams.component';
 const AsyncBehavior = asyncComponent(() => {
     return import('../Behavior/behavior.component');
 });
@@ -72,8 +72,8 @@ class DashboardComponent extends React.Component<{}, any> {
                     Dashboard
                 </h2>
                 <div className="row p-2">
-                    <TeamsComponent/>
-                    <TeamsComponent/>
+                    {/* <TeamsComponent/>
+                    <TeamsComponent/> */}
                 </div>
             </div>
         )

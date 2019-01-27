@@ -6,6 +6,7 @@ import { DragDropContext } from 'react-dnd';
 import './dragDrop.component.scss'
 import { UserService } from '../../Service';
 import { IUserService } from '../../Interface/IService';
+import { TeamsComponent } from './Teams';
 class DragDropComponent extends React.Component<any, any> {
   private _userService: IUserService;
   constructor(props: any) {
@@ -105,6 +106,9 @@ class DragDropComponent extends React.Component<any, any> {
           <DropArea player="Player2" update={this.updateList}
             charaterList={this.state.Player2SelectedStaffs}
             removeCharater={this.removeCharater} />
+        </div>
+        <div className="row">
+          <TeamsComponent/>
         </div>
       </div>
     );
